@@ -1,4 +1,4 @@
 package com.booleanuk.core;
 
-public class Customer {
+public class CustomerTest {
 }

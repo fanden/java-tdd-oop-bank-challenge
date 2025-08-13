@@ -1,4 +1,4 @@
 package com.booleanuk.core;
 
-public abstract class User {
+public abstract class UserTest {
 }

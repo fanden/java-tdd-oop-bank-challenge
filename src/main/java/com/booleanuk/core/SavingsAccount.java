@@ -1,4 +1,13 @@
 package com.booleanuk.core;
 
-public class SavingsAccount {
+import java.util.UUID;
+
+public class SavingsAccount extends Account {
+    private float interestRate;
+    private static final AccountType accountType = AccountType.SAVINGS;
+
+    public SavingsAccount(UUID CustomerUUID) {
+        super(CustomerUUID, accountType);
+        this.interestRate = 0;
+    }
 }

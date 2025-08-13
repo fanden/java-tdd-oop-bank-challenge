@@ -1,4 +1,4 @@
 package com.booleanuk.core;
 
-public abstract class Account {
+public abstract class AccountTest {
 }

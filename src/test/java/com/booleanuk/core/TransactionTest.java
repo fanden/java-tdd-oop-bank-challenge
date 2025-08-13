@@ -1,4 +1,4 @@
 package com.booleanuk.core;
 
-public class Transaction {
+public class TransactionTest {
 }
