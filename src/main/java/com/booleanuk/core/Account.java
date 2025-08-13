@@ -17,7 +17,7 @@ public abstract class Account {
         this.accountType = accountType;
     }
 
-    public void addTransaction(float amount) {
+    public void addTransaction(double amount) {
         this.transactions.add(new Transaction(amount));
     }
 
