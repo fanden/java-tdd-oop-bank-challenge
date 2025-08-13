@@ -16,7 +16,7 @@ public class Customer extends User {
         return accountUUIDs;
     }
 
-    public void addSingleAccountToAccountlist(UUID accountUUID) {
+    public void addAccount(UUID accountUUID) {
         this.accountUUIDs.add(accountUUID);
     }
 }
