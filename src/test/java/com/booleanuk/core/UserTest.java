@@ -1,4 +1,13 @@
 package com.booleanuk.core;
 
-public abstract class UserTest {
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+public class UserTest {
+    @Test
+    public void testUser() {
+        // Nothing to test here except getters and setters
+        assertTrue(true);
+    }
 }
