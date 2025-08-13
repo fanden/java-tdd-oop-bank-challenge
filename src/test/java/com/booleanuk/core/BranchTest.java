@@ -52,4 +52,23 @@ public class BranchTest {
 
         assertNotNull(testBranch.getAccountsForAccountID(testAccountUUID));
     }
+
+    @Test void testEverything() {
+        Branch testBranch = new Branch("oslo");
+        User testCustomer = new Customer("Trond Giske");
+        UUID testUserUUID = testCustomer.getUUID();
+
+        testBranch.createCurrentAccountForUser(testUserUUID);
+        CurrentAccount testAccount = (CurrentAccount) testBranch.getAccountsForCustomerID(testUserUUID).getFirst();
+
+        testAccount.addTransaction(1000);
+        testAccount.addTransaction(2000);
+        testAccount.addTransaction(-500);
+
+        testAccount.printAccountStatement();
+
+        assertEquals(2500, testAccount.calculateBalance());
+
+
+    }
 }

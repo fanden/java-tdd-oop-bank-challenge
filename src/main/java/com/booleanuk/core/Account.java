@@ -1,6 +1,9 @@
 package com.booleanuk.core;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
@@ -66,4 +69,35 @@ public abstract class Account {
                 ", accountType=" + accountType +
                '}';
     }
+
+    public void printAccountStatement() {
+
+        final String rowFmt = "%-15s||%15s||%15s||%15s%n";
+        System.out.printf(rowFmt,"date", "credit", "debit", "balance");
+
+        // Date Innskudd Utrekk Balanse
+        double balance = 0;
+
+        for (Transaction transaction : transactions) {
+            String transactionDate =  transaction.getDate().toString();
+            double amount = transaction.getAmount();
+            String credit = "";
+            String debit = "";
+
+            if(amount <= 0) {
+                debit = Double.toString(
+                        Math.abs(amount));
+            }
+            else{
+                credit = Double.toString(
+                        amount);
+            }
+
+            balance = balance + amount;
+
+            System.out.printf(rowFmt,transactionDate, credit, debit, balance);
+
+        }
+    }
 }
+

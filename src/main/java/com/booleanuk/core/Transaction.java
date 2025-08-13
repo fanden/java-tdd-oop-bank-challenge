@@ -37,10 +37,4 @@ public class Transaction {
     public void setId(UUID id) {
         this.id = id;
     }
-
-    @Override
-    public String toString() {
-        return String.format("Transaction{amount=%-15s, date=%-15s, id=%-15s}", amount, date, id);
-        //return String.format("%-15s  %-15s  %-15s, "date",  "amount",  "id");
-    }
 }
